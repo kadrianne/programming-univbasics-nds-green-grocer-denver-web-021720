@@ -137,6 +137,7 @@ def apply_coupons(cart, coupons)
       coupon_item[:count] = coupon[:num]
     end
     if cart_item && cart_item[:count] >= coupons[i][:num]
+      binding.pry
       cart << coupon_item
       # if coupon_item
       #   coupon_item[:count] += coupons[i][:num]
