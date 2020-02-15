@@ -170,7 +170,7 @@ def checkout(cart, coupons)
   i = 0
   total = 0
   while i < consolidated_cart.length
-    item = consolidated_cart[i][:item]
+    qty = consolidated_cart[i][:count]
     price = consolidated_cart[i][:price]
     binding.pry
     total += item * price
