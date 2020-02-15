@@ -168,6 +168,7 @@ end
 def checkout(cart, coupons)
   consolidated_cart = consolidate_cart(cart)
   i = 0
+  total = 0
   while i < consolidated_cart.length
     item = consolidated_cart[i][:item]
     price = consolidated_cart[i][:price]
