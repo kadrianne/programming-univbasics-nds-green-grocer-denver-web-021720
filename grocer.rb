@@ -130,7 +130,7 @@ def apply_coupons(cart, coupons)
     if coupon_item && coupons[i][:num] >= cart_item[:count]
       coupon_item[:count] += coupons[i][:num]
       cart_item[:count] -= coupons[i][:num]
-    else
+    elsif !coupon_item
       coupon_item = {
       item: coupon_name,
       price: (coupons[i][:cost] / coupons[i][:num]),
@@ -139,6 +139,7 @@ def apply_coupons(cart, coupons)
       }
       cart << coupon_item
       cart_item[:count] -= coupons[i][:num]
+    else
     end
     i += 1
   end
