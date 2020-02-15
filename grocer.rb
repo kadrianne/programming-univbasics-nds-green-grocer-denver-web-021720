@@ -129,30 +129,30 @@ def apply_coupons(cart, coupons)
     coupon_name = "#{item_name} W/COUPON"
     cart_item = find_item_by_name_in_collection(item_name, cart)
     coupon_item = find_item_by_name_in_collection(coupon_name, cart)
-    if coupon_item == nil
-      coupon_item = {}
-      coupon = find_item_by_name_in_collection(item_name, coupons)
-      coupon_item[:item] = coupon_name
-      coupon_item[:price] = coupon[:cost] / coupon[:num]
-      coupon_item[:clearance] = cart_item[:clearance]
-      coupon_item[:count] = coupon[:num]
-      cart << coupon_item
-    elsif cart_item && cart_item[:count] >= coupons[i][:num]
-      cart << coupon_item
-      cart_item[:count] -= coupon[:num]
-      # if coupon_item
-      #   coupon_item[:count] += coupons[i][:num]
-      #   cart_item[:count] -= coupons[i][:num]
-      # else
-      #   coupon_item = {
-      #   item: coupon_name,
-      #   price: (coupons[i][:cost] / coupons[i][:num]),
-      #   clearance: cart_item[:clearance],
-      #   count: coupons[i][:num]
-      #   }
-      #   cart << coupon_item
-      #   cart_item[:count] -= coupons[i][:num]
-      # end
+    # if coupon_item == nil
+    #   coupon_item = {}
+    #   coupon = find_item_by_name_in_collection(item_name, coupons)
+    #   coupon_item[:item] = coupon_name
+    #   coupon_item[:price] = coupon[:cost] / coupon[:num]
+    #   coupon_item[:clearance] = cart_item[:clearance]
+    #   coupon_item[:count] = coupon[:num]
+    #   cart << coupon_item
+    # elsif cart_item && cart_item[:count] >= coupons[i][:num]
+    #   cart << coupon_item
+    #   cart[:count] -= coupon[:num]
+      if coupon_item
+        coupon_item[:count] += coupons[i][:num]
+        cart_item[:count] -= coupons[i][:num]
+      else
+        coupon_item = {
+        item: coupon_name,
+        price: (coupons[i][:cost] / coupons[i][:num]),
+        clearance: cart_item[:clearance],
+        count: coupons[i][:num]
+        }
+        cart << coupon_item
+        cart_item[:count] -= coupons[i][:num]
+      end
     end
     i += 1
   end
