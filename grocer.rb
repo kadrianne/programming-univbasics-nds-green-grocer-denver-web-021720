@@ -130,13 +130,14 @@ def apply_coupons(cart, coupons)
     cart_item = find_item_by_name_in_collection(item_name, cart)
     coupon_item = find_item_by_name_in_collection(coupon_name, cart)
     if coupon_item == nil
-        binding.pry
       coupon = find_item_by_name_in_collection(item_name, coupons)
       coupon_item[:item] = coupon_name
       coupon_item[:price] = coupon[:cost] / coupon[:num]
       coupon_item[:clearance] = cart_item[:clearance]
       coupon_item[:count] = coupon[:num]
     end
+            binding.pry
+    coupon_item
     if cart_item && cart_item[:count] >= coupons[i][:num]
       # cart << coupon_item
       # if coupon_item
