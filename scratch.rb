@@ -1,3 +1,4 @@
+require 'pry'
 collection =    [
       {:item => "AVOCADO", :price => 3.00, :clearance => true},
       {:item => "KALE", :price => 3.00, :clearance => false},
@@ -60,6 +61,7 @@ def apply_coupons(cart, coupons)
     cart_item = find_item_by_name_in_collection(item_name, cart)
     coupon_item = find_item_by_name_in_collection(coupon_name, cart)
     if coupon_item && coupons[i][:num] >= cart_item[:count]
+      binding.pry
       coupon_item[:count] += coupons[i][:num]
       cart_item[:count] -= coupons[i][:num]
     elsif !coupon_item
