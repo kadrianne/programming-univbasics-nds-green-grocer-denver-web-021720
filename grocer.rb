@@ -121,8 +121,6 @@ end
 # end
 
 def apply_coupons(cart, coupons)
-  # cart => [{:item=>"AVOCADO", :price=>3.0, :clearance=>true, :count=>2}]
-  # coupons => [{:item=>"AVOCADO", :num=>2, :cost=>5.0}]
   i = 0
   while i < coupons.length
     item_name = coupons[i][:item]
