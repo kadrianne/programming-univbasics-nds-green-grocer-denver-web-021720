@@ -52,9 +52,9 @@ def consolidate_cart(cart)
   new_cart
 end
 
-consolidate_cart(cart)
+consolidated_cart = consolidate_cart(cart)
 
-def apply_coupons(cart, coupons)
+def apply_coupons(consolidated_cart, coupons)
   i = 0
   while i < coupons.length
     item_name = coupons[i][:item]
