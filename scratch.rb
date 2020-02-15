@@ -11,11 +11,6 @@ items =    [
       {:item => "BEETS", :price => 2.50, :clearance => false},
       {:item => "SOY MILK", :price => 4.50, :clearance => true}
     ]
-
-        beer = find_item_by_name_in_collection('BEER', items)
-        cart = [beer, beer, beer]
-        beer_coupon = coupons[1]
-        coupons = [beer_coupon, beer_coupon]
         
 def find_item_by_name_in_collection(name, collection)
   i = 0
@@ -29,6 +24,11 @@ def find_item_by_name_in_collection(name, collection)
   end
 end
 
+        beer = find_item_by_name_in_collection('BEER', items)
+        cart = [beer, beer, beer]
+        beer_coupon = coupons[1]
+        coupons = [beer_coupon, beer_coupon]
+        
 def consolidate_cart(cart)
   i = 0
   new_cart = []
