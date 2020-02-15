@@ -178,6 +178,7 @@ def checkout(cart, coupons)
     total += qty * price
     i+=1
   end
+    binding.pry
   total
   # Consult README for inputs and outputs
   #
