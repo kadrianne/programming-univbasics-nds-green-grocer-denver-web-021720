@@ -146,7 +146,6 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
@@ -156,15 +155,15 @@ def apply_clearance(cart)
 # * Returns:
 #   * a ***new*** `Array` where every ***unique*** item in the original is present
 #     *but* with its price reduced by 20% if its `:clearance` value is `true`
-  # i = 0
-  # while i < cart.length do
-  #   if cart[i][:clearance] == true
-  #     cart[i][:price] = (cart[i][:price]*.8)
-  #   else
-  #   end
-  # i += 1
-  # end
-  # cart
+  i = 0
+  while i < cart.length do
+    if cart[i][:clearance] == true
+      cart[i][:price] = (cart[i][:price]*.8)
+    else
+    end
+  i += 1
+  end
+  cart
 end
 
 def checkout(cart, coupons)
