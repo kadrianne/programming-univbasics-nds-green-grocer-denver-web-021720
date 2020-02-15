@@ -53,7 +53,7 @@ def consolidate_cart(cart)
 end
 
 
-def apply_coupons(cart, coupons)
+def apply_coupons(consolidate_cart(cart), coupons)
   i = 0
   while i < coupons.length
     item_name = coupons[i][:item]
