@@ -171,9 +171,9 @@ def checkout(cart, coupons)
   applied_cart = apply_clearance(coupon_cart)
   i = 0
   total = 0
-  while i < consolidated_cart.length
-    qty = consolidated_cart[i][:count]
-    price = consolidated_cart[i][:price]
+  while i < applied_cart.length
+    qty = applied_cart[i][:count]
+    price = applied_cart[i][:price]
     total += qty * price
     i+=1
   end
