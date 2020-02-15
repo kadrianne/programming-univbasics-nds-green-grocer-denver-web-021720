@@ -173,6 +173,7 @@ def checkout(cart, coupons)
     qty = consolidated_cart[i][:count]
     price = consolidated_cart[i][:price]
     total += qty * price
+    i+=1
   end
   total
   # Consult README for inputs and outputs
