@@ -135,8 +135,9 @@ def apply_coupons(cart, coupons)
       coupon_item[:price] = coupon[:cost] / coupon[:num]
       coupon_item[:clearance] = cart_item[:clearance]
       coupon_item[:count] = coupon[:num]
+                    binding.pry
     end
-              binding.pry
+
     if cart_item && cart_item[:count] >= coupons[i][:num]
       # cart << coupon_item
       # if coupon_item
