@@ -129,6 +129,7 @@ def apply_coupons(cart, coupons)
     coupon_item = find_item_by_name_in_collection(coupon_name, cart)
     coupon = find_item_by_name_in_collection(item_name, coupons)
     if coupon_item && coupon[i][:num] >= cart_item[:count]
+      binding.pry
       coupon_item[:count] += coupons[i][:num]
       cart_item[:count] -= coupons[i][:num]
     else
