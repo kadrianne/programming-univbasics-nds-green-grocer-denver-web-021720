@@ -67,7 +67,7 @@ def consolidate_cart(cart)
       new_item_info = {
         item: cart_item[:item];
         price: cart_item[:price];
-        clearance: cart_item[:clearance]
+        clearance: cart_item[:clearance];
       }
       new_item_info[:count] = 1
       new_cart << new_item_info
