@@ -80,3 +80,5 @@ def apply_coupons(cart, coupons)
   end
   cart
 end
+
+consolidated_cart(cart)
