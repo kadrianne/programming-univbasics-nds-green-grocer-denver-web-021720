@@ -62,17 +62,17 @@ def consolidate_cart(cart)
   while i < cart.length do
     item_name = cart[i][:item]
     item_new_cart = find_item_by_name_in_collection(item_name, new_cart)
-    if item_new_cart  == nil # if item name is not found in new_cart, add item with :count => 1
-      cart_item = find_item_by_name_in_collection(item_name, cart)
-      new_item_info = {
+    cart_item = find_item_by_name_in_collection(item_name, cart)
+    new_item_info = {
         item: cart_item[:item],
         price: cart_item[:price],
         clearance: cart_item[:clearance]
-      }
+    }
+    if item_new_cart  == nil # if item name is not found in new_cart, add item with :count => 1
       new_item_info[:count] = 1
       new_cart << new_item_info
     else # if item name is found in new_cart, increase count by 1
-      item_new_cart[:count] += 1
+      new_item_info[:count] += 1
     end
     i += 1
   end
