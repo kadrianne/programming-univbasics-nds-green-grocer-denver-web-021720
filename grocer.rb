@@ -139,6 +139,7 @@ def apply_coupons(cart, coupons)
       cart << coupon_item
     elsif cart_item && cart_item[:count] >= coupons[i][:num]
       cart << coupon_item
+      cart[item_name]
       # if coupon_item
       #   coupon_item[:count] += coupons[i][:num]
       #   cart_item[:count] -= coupons[i][:num]
